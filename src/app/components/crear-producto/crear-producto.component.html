@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Crear producto</span>
+                    <form action="" [formGroup]="productoFroms" (ngSubmit)="agegarProductos()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="producto" class="form-control form-control" placeholder="Producto">
+                            <div class="validacion" *ngIf="productoFroms.get('producto')?.hasError('required') && productoFroms.get('producto')?.touched">
+                                <span>el nombre del producto <strong>es obligatorios</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="text" formControlName="categoria" class="form-control form-control" placeholder="Categoria">
+                            <div class="validacion" *ngIf="productoFroms.get('categoria')?.hasError('required') && productoFroms.get('categoria')?.touched">
+                                <span>la categoria <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="ubicacion" class="form-control form-control" placeholder="Ubicacion">
+                            <div class="validacion" *ngIf="productoFroms.get('ubicacion')?.hasError('required') && productoFroms.get('ubicacion')?.touched">
+                                <span>la categoria <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="precio" class="form-control form-control" placeholder="Precio">
+                            <div class="validacion" *ngIf="productoFroms.get('precio')?.hasError('required') && productoFroms.get('precio')?.touched">
+                                <span>la categoria <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink="/" class="btn btn-secondary float-start">volver</button>
+                            <button type="submit" [disabled]="productoFroms.invalid" class="btn btn-success float-end" >aceptar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
